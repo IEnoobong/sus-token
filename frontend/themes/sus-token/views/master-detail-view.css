@@ -42,3 +42,31 @@
 .master-detail-view .grid-wrapper {
   width: 100%;
 }
+
+/*filters*/
+.master-detail-view .filter-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  align-items: end;
+  gap: 0 var(--lumo-space-l);
+}
+
+.master-detail-view .filter-layout .double-width {
+  grid-column-end: span 2;
+}
+
+.master-detail-view .filter-layout .actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  grid-column-end: -1;
+}
+
+.master-detail-view .filter-layout vaadin-date-picker {
+  --vaadin-field-default-width: 6em;
+  width: 100%;
+}
+
+.master-detail-view .filter-layout vaadin-combo-box {
+  --vaadin-field-default-width: auto;
+}

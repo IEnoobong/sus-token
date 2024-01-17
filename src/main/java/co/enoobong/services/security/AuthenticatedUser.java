@@ -1,7 +1,7 @@
 package co.enoobong.services.security;
 
-import co.enoobong.services.data.User;
-import co.enoobong.services.data.UserRepository;
+import co.enoobong.services.data.entities.User;
+import co.enoobong.services.data.repositories.UserRepository;
 import com.vaadin.flow.spring.security.AuthenticationContext;
 import java.util.Optional;
 import org.springframework.security.core.userdetails.UserDetails;

@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@api3/airnode-abi": "^0.13.0"
+  }
+}

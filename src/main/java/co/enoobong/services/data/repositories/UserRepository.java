@@ -1,6 +1,6 @@
-package co.enoobong.services.data;
+package co.enoobong.services.data.repositories;
 
-
+import co.enoobong.services.data.entities.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 

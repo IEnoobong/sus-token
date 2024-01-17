@@ -1,7 +1,7 @@
 package co.enoobong.services.services;
 
-import co.enoobong.services.data.User;
-import co.enoobong.services.data.UserRepository;
+import co.enoobong.services.data.entities.User;
+import co.enoobong.services.data.repositories.UserRepository;
 import java.util.Optional;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

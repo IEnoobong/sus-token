@@ -1,6 +1,6 @@
 package co.enoobong.services;
 
-import co.enoobong.services.data.SamplePersonRepository;
+import co.enoobong.services.data.repositories.UserRepository;
 import com.vaadin.flow.component.page.AppShellConfigurator;
 import com.vaadin.flow.theme.Theme;
 import javax.sql.DataSource;
@@ -12,10 +12,10 @@ import org.springframework.context.annotation.Bean;
 
 /**
  * The entry point of the Spring Boot application.
- *
+ * <p>
  * Use the @PWA annotation make the application installable on phones, tablets
  * and some desktop browsers.
- *
+ * </p>
  */
 @SpringBootApplication
 @Theme(value = "sus-token")
@@ -27,7 +27,7 @@ public class Application implements AppShellConfigurator {
 
     @Bean
     SqlDataSourceScriptDatabaseInitializer dataSourceScriptDatabaseInitializer(DataSource dataSource,
-            SqlInitializationProperties properties, SamplePersonRepository repository) {
+        SqlInitializationProperties properties, UserRepository repository) {
         // This bean ensures the database is only initialized when empty
         return new SqlDataSourceScriptDatabaseInitializer(dataSource, properties) {
             @Override

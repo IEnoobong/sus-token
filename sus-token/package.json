@@ -1,0 +1,23 @@
+{
+  "name": "sus-token",
+  "version": "1.0.0",
+  "description": "A reward token for performing environmentally friendly, climate-responsible actions",
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.2.3",
+    "@nomiclabs/hardhat-waffle": "^2.0.6",
+    "@types/chai": "^4.3.11",
+    "@types/mocha": "^10.0.6",
+    "chai": "^4.4.1",
+    "dotenv": "^16.3.1",
+    "ethereum-waffle": "^4.0.10",
+    "ethers": "^5.7.2",
+    "hardhat": "^2.19.4",
+    "hardhat-deploy": "^0.11.45",
+    "mocha": "^10.2.0",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@api3/airnode-protocol": "^0.13.0",
+    "@openzeppelin/contracts": "^5.0.1"
+  }
+}

@@ -1,4 +1,4 @@
-package co.enoobong.services.data;
+package co.enoobong.services.data.entities;
 
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -17,7 +17,7 @@ public abstract class AbstractEntity {
     private Long id;
 
     @Version
-    private int version;
+    private short version;
 
     public Long getId() {
         return id;
@@ -27,16 +27,13 @@ public abstract class AbstractEntity {
         this.id = id;
     }
 
-    public int getVersion() {
+  public short getVersion() {
         return version;
     }
 
     @Override
     public int hashCode() {
-        if (getId() != null) {
-            return getId().hashCode();
-        }
-        return super.hashCode();
+      return getId().hashCode();
     }
 
     @Override
@@ -44,9 +41,6 @@ public abstract class AbstractEntity {
         if (!(obj instanceof AbstractEntity that)) {
             return false; // null or not an AbstractEntity class
         }
-        if (getId() != null) {
-            return getId().equals(that.getId());
-        }
-        return super.equals(that);
+      return getId().equals(that.getId());
     }
 }

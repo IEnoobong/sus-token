@@ -1,12 +1,10 @@
 package co.enoobong.services.views;
 
-import co.enoobong.services.data.User;
+import co.enoobong.services.data.entities.User;
 import co.enoobong.services.security.AuthenticatedUser;
 import co.enoobong.services.views.about.AboutView;
-import co.enoobong.services.views.helloworld.HelloWorldView;
-import co.enoobong.services.views.imagegallery.ImageGalleryView;
-import co.enoobong.services.views.masterdetail.MasterDetailView;
-import co.enoobong.services.views.sustainabilityactions.SustainabilityActionsView;
+import co.enoobong.services.views.reviewproof.AdminReviewProofView;
+import co.enoobong.services.views.sendproof.SendProofView;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
 import com.vaadin.flow.component.avatar.Avatar;
@@ -37,8 +35,8 @@ public class MainLayout extends AppLayout {
 
     private H2 viewTitle;
 
-    private AuthenticatedUser authenticatedUser;
-    private AccessAnnotationChecker accessChecker;
+    private transient final AuthenticatedUser authenticatedUser;
+    private final AccessAnnotationChecker accessChecker;
 
     public MainLayout(AuthenticatedUser authenticatedUser, AccessAnnotationChecker accessChecker) {
         this.authenticatedUser = authenticatedUser;
@@ -72,27 +70,20 @@ public class MainLayout extends AppLayout {
     private SideNav createNavigation() {
         SideNav nav = new SideNav();
 
-        if (accessChecker.hasAccess(HelloWorldView.class)) {
-            nav.addItem(new SideNavItem("Hello World", HelloWorldView.class, LineAwesomeIcon.GLOBE_SOLID.create()));
+        if (accessChecker.hasAccess(SendProofView.class)) {
+            nav.addItem(new SideNavItem("Send Eco Proof", SendProofView.class,
+                LineAwesomeIcon.GLOBE_SOLID.create()));
 
         }
-        if (accessChecker.hasAccess(AboutView.class)) {
-            nav.addItem(new SideNavItem("About", AboutView.class, LineAwesomeIcon.FILE.create()));
-
-        }
-        if (accessChecker.hasAccess(SustainabilityActionsView.class)) {
-            nav.addItem(new SideNavItem("Sustainability Actions", SustainabilityActionsView.class,
+        if (accessChecker.hasAccess(AdminReviewProofView.class)) {
+            nav.addItem(
+                new SideNavItem("Review Proofs", AdminReviewProofView.class,
                     LineAwesomeIcon.FILTER_SOLID.create()));
 
         }
-        if (accessChecker.hasAccess(MasterDetailView.class)) {
-            nav.addItem(
-                    new SideNavItem("Master-Detail", MasterDetailView.class, LineAwesomeIcon.COLUMNS_SOLID.create()));
 
-        }
-        if (accessChecker.hasAccess(ImageGalleryView.class)) {
-            nav.addItem(
-                    new SideNavItem("Image Gallery", ImageGalleryView.class, LineAwesomeIcon.TH_LIST_SOLID.create()));
+        if (accessChecker.hasAccess(AboutView.class)) {
+            nav.addItem(new SideNavItem("About", AboutView.class, LineAwesomeIcon.FILE.create()));
 
         }
 
